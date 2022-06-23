@@ -1,0 +1,21 @@
+syntax on
+filetype on
+
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set smartindent
+set number
+set termguicolors
+set undofile
+set nospell
+set title
+set ignorecase
+set smartcase
+set wildmode
+set nowrap
+set list
+set scrolloff=8
+set sidescrolloff=8
+set incsearch
+set background=dark

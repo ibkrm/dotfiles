@@ -1,12 +1,17 @@
-local Plug = vim.fn['plug#']
+local fn = vim.fn
+local Plug = fn['plug#']
 
-vim.call('plug#begin','~/.vim/plugged')
-    Plug 'nvim-telescope/telescope.nvim'
+local plugged_path = fn.stdpath('data') .. "/plugged"
+
+vim.call('plug#begin', plugged_path)
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'nvim-treesitter/nvim-treesitter'
+    --Plug 'ray-x/go.nvim'
     Plug 'gruvbox-community/gruvbox'
-    Plug 'preservim/nerdtree'
-    Plug 'voldikss/vim-floaterm'
 vim.call('plug#end')
 
+-- setting up golang
+-- require("go").setup()
+
 --**UNCOMMENT BELOW FOR 'GRUVBOX' COLOR-SCHEME**
-vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[colorscheme gruvbox]])
