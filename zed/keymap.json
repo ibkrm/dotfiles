@@ -1,0 +1,214 @@
+[
+  // ============================================================================
+  // WORKSPACE - Global shortcuts
+  // ============================================================================
+  {
+    "context": "Workspace",
+    "bindings": {
+      // Your existing binding
+      "ctrl-`": "workspace::ToggleBottomDock"
+      
+      // Optional: Uncomment if you want JetBrains-style double-shift search
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+// 
+  // ============================================================================
+  // EDITOR - Font size controls (your existing bindings)
+  // ============================================================================
+  {
+    "context": "Editor",
+    "bindings": {
+      "cmd--": "zed::DecreaseBufferFontSize",
+      "cmd-=": "zed::IncreaseBufferFontSize",
+      "cmd-0": "zed::ResetBufferFontSize"
+    }
+  },
+
+  // ============================================================================
+  // INSERT MODE - Quick escape (your existing + kj alternative)
+  // ============================================================================
+  {
+    "context": "Editor && vim_mode == insert && !menu",
+    "bindings": {
+      "j k": "vim::NormalBefore",
+      "k j": "vim::NormalBefore"  // Added: also allow kj
+    }
+  },
+
+  // ============================================================================
+  // INSERT MODE - Quick save
+  // ============================================================================
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "ctrl-s": "workspace::Save"
+    }
+  },
+
+  // ============================================================================
+  // NORMAL MODE - Leader key mappings (Space)
+  // ============================================================================
+  {
+    "context": "vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // File operations
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "space shift-q": "workspace::CloseAllDocks",
+      
+      // File navigation
+      "space f f": "file_finder::Toggle",
+      "space f g": "project_search::ToggleFocus",
+      "space f r": "projects::OpenRecent",
+      
+      // Toggle panels
+      "space e": "workspace::ToggleLeftDock",
+      "space t t": "terminal_panel::ToggleFocus",
+      
+      // Splits
+      "space s v": "pane::SplitVertical",
+      "space s h": "pane::SplitHorizontal",
+      "space s x": "pane::CloseActiveItem",
+      
+      // Code actions
+      "space c a": "editor::ToggleCodeActions",
+      "space r n": "editor::Rename",
+      "space f m": "editor::Format",
+      
+      // Commenting
+      "space /": "editor::ToggleComments",
+      "g c c": "editor::ToggleComments",
+      
+      // Diagnostics
+      "space d l": "diagnostics::Deploy",
+      
+      // Outline/Structure
+      "space o": "outline::Toggle",
+      
+      // Buffer management
+      "space b d": "pane::CloseActiveItem",
+      
+      // Quick save (also works with ctrl-s)
+      "ctrl-s": "workspace::Save"
+    }
+  },
+
+  // ============================================================================
+  // VIM CONTROL - Window/Pane navigation (Normal & Visual modes)
+  // ============================================================================
+  {
+    "context": "VimControl && !VimWaiting && !menu",
+    "bindings": {
+      // Window navigation with Ctrl+hjkl
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight",
+      
+      // Center cursor when scrolling
+      "ctrl-d": "vim::ScrollDown",
+      "ctrl-u": "vim::ScrollUp"
+    }
+  },
+
+  // ============================================================================
+  // NORMAL MODE - Enhanced navigation
+  // ============================================================================
+  {
+    "context": "vim_mode == normal && !VimWaiting && !menu",
+    "bindings": {
+      // Buffer/Tab navigation
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+      
+      // Go to definition and references
+      "g d": "editor::GoToDefinition",
+      "g i": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences",
+      "g t": "editor::GoToTypeDefinition",
+      "shift-k": "editor::Hover",
+      
+      // Diagnostics navigation
+      "] d": "editor::GoToDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic"
+    }
+  },
+
+  // ============================================================================
+  // VISUAL MODE - Enhanced editing
+  // ============================================================================
+  {
+    "context": "vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      // Move lines up/down
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp",
+      
+      // Better indenting
+      "<": "editor::Outdent",
+      ">": "editor::Indent",
+      
+      // Commenting
+      "g c": "editor::ToggleComments",
+      "space /": "editor::ToggleComments"
+    }
+  },
+
+  // ============================================================================
+  // PROJECT PANEL - Leader key works here too
+  // ============================================================================
+  {
+    "context": "ProjectPanel || EmptyPane",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space f g": "project_search::ToggleFocus",
+      "space e": "workspace::ToggleLeftDock"
+    }
+  },
+
+  // ============================================================================
+  // DOCK NAVIGATION - Ctrl+hjkl works in terminal/panels too
+  // ============================================================================
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  }
+
+  // ============================================================================
+  // OPTIONAL ADDITIONS (commented out - uncomment if you want them)
+  // ============================================================================
+  
+  // Subword motion for camelCase/snake_case navigation
+  // {
+  //   "context": "VimControl && !menu && vim_mode != operator",
+  //   "bindings": {
+  //     "w": "vim::NextSubwordStart",
+  //     "b": "vim::PreviousSubwordStart",
+  //     "e": "vim::NextSubwordEnd",
+  //     "g e": "vim::PreviousSubwordEnd"
+  //   }
+  // },
+
+  // Use shift-s for surround in visual mode (instead of substitute)
+  // {
+  //   "context": "vim_mode == visual",
+  //   "bindings": {
+  //     "shift-s": "vim::PushAddSurrounds"
+  //   }
+  // },
+
+  // Line wrapping with h/l (cursor wraps to next/prev line)
+  // {
+  //   "context": "VimControl && !menu",
+  //   "bindings": {
+  //     "h": "vim::WrappingLeft",
+  //     "l": "vim::WrappingRight"
+  //   }
+  // }
+]
