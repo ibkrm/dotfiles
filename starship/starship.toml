@@ -1,0 +1,58 @@
+# # Get editor completions based on the config schema
+# "$schema" = 'https://starship.rs/config-schema.json'
+
+# # Inserts a blank line between shell prompts
+# add_newline = false
+
+# # Replace the '❯' symbol in the prompt with '➜'
+# [character] # The name of the module we are configuring is 'character'
+# success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
+
+# # Disable the package module, hiding it from the prompt completely
+# [package]
+# disabled = true
+
+# ~/.config/starship.toml
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Move the prompt to a new line for better readability
+add_newline = true
+
+# The prompt symbol
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+# Only show the last 3 directories
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "bold blue"
+
+# Minimal Git status
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "red"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
+# DISABLE the "noise" (version numbers you don't always need)
+[package]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[rust]
+disabled = true
+
+# Add a command duration if it takes more than 2 seconds
+[cmd_duration]
+min_time = 2000
+format = "took [$duration]($style) "
