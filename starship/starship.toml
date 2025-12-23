@@ -17,7 +17,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Move the prompt to a new line for better readability
-add_newline = true
+add_newline = false 
 
 # The prompt symbol
 [character]
