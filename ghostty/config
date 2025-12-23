@@ -1,0 +1,8 @@
+# ~/.config/ghostty/config
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+theme = catppuccin-mocha
+background-opacity = 0.9
+background-blur-radius = 20
+window-padding-x = 10
+window-padding-y = 10
