@@ -31,4 +31,10 @@ if not vim.g.vscode then
     vim.o.inccommand = 'split'
     vim.o.cursorline = true
     vim.o.confirm = true
+
+    -- Folding configuration (requires treesitter)
+    vim.o.foldmethod = 'expr'
+    vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+    vim.o.foldcolumn = '1' -- Show fold column
+    vim.o.foldlevel = 99   -- Start with all folds open
 end

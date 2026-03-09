@@ -9,19 +9,20 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Note: In VSCode, configure these in VSCode settings instead:
 -- "vscode-neovim.compositeKeys": { "jk": { "command": "vscode-neovim.escape" } }
 if not vim.g.vscode then
-    vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
-    vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Exit insert mode' })
+  vim.keymap.set('i', 'jk', '<Esc>', { desc = 'Exit insert mode' })
+  vim.keymap.set('i', 'kj', '<Esc>', { desc = 'Exit insert mode' })
+  vim.keymap.set('n', 'jk', '<Esc>', { desc = 'Exit insert mode' })
 end
 
 -- Diagnostic keymaps
 if vim.g.vscode then
-    -- In VSCode, open problems panel instead
-    vim.keymap.set('n', '<leader>q', function()
-        require('vscode').call('workbench.actions.view.problems')
-    end, { desc = 'Open problems panel' })
+  -- In VSCode, open problems panel instead
+  vim.keymap.set('n', '<leader>q', function()
+    require('vscode').call 'workbench.actions.view.problems'
+  end, { desc = 'Open problems panel' })
 else
-    -- In Neovim, use quickfix list
-    vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+  -- In Neovim, use quickfix list
+  vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 end
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier

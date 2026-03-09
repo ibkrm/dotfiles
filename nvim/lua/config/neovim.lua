@@ -740,7 +740,7 @@ require('lazy').setup({
         main = 'nvim-treesitter.configs',
         -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
         opts = {
-            ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+            ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'json', 'yaml', 'python', 'javascript', 'typescript', 'go', 'rust' },
             auto_install = true,
             highlight = { enable = true, additional_vim_regex_highlighting = { 'ruby' } },
             indent = { enable = true, disable = { 'ruby' } },
@@ -766,7 +766,7 @@ require('lazy').setup({
     -- require 'kickstart.plugins.indent_line',
     -- require 'kickstart.plugins.lint',
     -- require 'kickstart.plugins.autopairs',
-    -- require 'kickstart.plugins.neo-tree',
+    require 'kickstart.plugins.neo-tree',
     -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
     -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
